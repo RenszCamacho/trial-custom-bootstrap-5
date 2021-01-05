@@ -1,4 +1,46 @@
 // Custom.scss
 // Option A: Include all of Bootstrap
+$font-family-sans-serif: "Josefin Sans", sans-serif;
+
+.btn {
+  color: white;
+  background-color: black;
+  border: 2px solid black;
+  border-radius: 0;
+  padding: 8px 25px;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    color: black;
+    background-color: transparent;
+    border-color: black;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  &:before {
+    position: absolute;
+    content: " ";
+    top: 0;
+    height: 100%;
+    left: -25%;
+    width: 0;
+    background-color: black;
+    transform: skew(50deg);
+    transition: 600ms;
+  }
+
+  &:hove::before {
+    width: 170%;
+    background-color: transparent;
+  }
+
+  &:focus {
+    box-shadow: unset;
+    background-color: transparent;
+    border-color: black;
+    color: black;
+  }
+}
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
